@@ -1,6 +1,7 @@
 import axios from 'axios';
 import { useEffect, useState } from 'react';
 import styles from './Home.module.scss';
+import Sidebar from '../../components/sidebar/Sidebar';
 
 export default function Home() {
   const [repoData, setRepoData] = useState([]);
@@ -22,25 +23,31 @@ export default function Home() {
 
   return (
     <div className={styles.home}>
-      <table className={styles.table}>
-        <tr>
-          <th>Name</th>
-          <th>Created Date</th>
-          <th>Updated Date</th>
-          <th>Languange</th>
-        </tr>
-        {repoData &&
-          repoData.map((item) => (
-            <tr key={item.id}>
-              <td>
-                <a href={item.html_url}>{item.name}</a>
-              </td>
-              <td>{item.created_at.slice(0, 10)}</td>
-              <td>{item.updated_at.slice(0, 10)}</td>
-              <td>{item.language}</td>
-            </tr>
-          ))}
-      </table>
+      <div className={styles.haeder}></div>
+      <div className={styles.main}>
+        <table className={styles.table}>
+          <tr>
+            <th>Name</th>
+            <th>Created Date</th>
+            <th>Updated Date</th>
+            <th>Languange</th>
+          </tr>
+          {repoData &&
+            repoData.map((item) => (
+              <tr key={item.id}>
+                <td>
+                  <a href={item.html_url}>{item.name}</a>
+                </td>
+                <td>{item.created_at.slice(0, 10)}</td>
+                <td>{item.updated_at.slice(0, 10)}</td>
+                <td>{item.language}</td>
+              </tr>
+            ))}
+        </table>
+      </div>
+      <div className={styles.menu}>
+        <Sidebar />
+      </div>
     </div>
   );
 }
