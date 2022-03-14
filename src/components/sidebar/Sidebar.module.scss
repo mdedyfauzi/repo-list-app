@@ -36,6 +36,15 @@
       font-style: italic;
       font-weight: bold;
     }
+
+    a {
+      text-decoration: none;
+      color: #c9d6e4;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
   }
 
   .details {

@@ -25,7 +25,9 @@ export default function Sidebar() {
       <div className={styles.avatar}>
         <img src={userData.avatar_url} alt="avatar" />
         <ul>
-          <li>{userData.login}</li>
+          <li>
+            <a href={userData.html_url}>{userData.login}</a>
+          </li>
           <li>{userData.bio}</li>
         </ul>
       </div>
