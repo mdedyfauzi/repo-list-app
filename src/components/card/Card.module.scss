@@ -1,0 +1,26 @@
+.card {
+  height: 125px;
+  width: 275px;
+  display: flex;
+  flex-direction: column;
+  color: #8b949e;
+  border: 0.5px solid #262b32;
+  font-size: small;
+
+  h3 {
+    color: #c9d6e4;
+    margin-top: 20px;
+    padding-left: 10px;
+  }
+
+  hr {
+    width: 100%;
+    border: none;
+    border-bottom: 0.5px solid #262b32;
+    margin: 10px 0;
+  }
+
+  p {
+    padding-left: 10px;
+  }
+}
