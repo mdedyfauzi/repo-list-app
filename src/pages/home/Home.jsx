@@ -28,7 +28,14 @@ export default function Home() {
       <div className={styles.main}>
         <div className={styles.cardList}>
           <h1>Newest</h1>
-          <div className={styles.cards}> {repoData && repoData.slice(0, 2).map((item) => <Card key={item.id} name={item.name} topics={item.topics} />)}</div>
+          <div className={styles.cards}>
+            {' '}
+            {repoData &&
+              repoData
+                .sort((a, b) => b.id - a.id)
+                .slice(0, 2)
+                .map((item) => <Card key={item.id} name={item.name} topics={item.topics} />)}
+          </div>
         </div>
         <div className={styles.content}>
           <h1>Table of Content</h1>
